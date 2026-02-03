@@ -16,7 +16,8 @@ export default function AccessCodeEntry() {
 
     try {
       // Fetch program from FastAPI
-      const response = await fetch(`http://localhost:8000/api/program/${accessCode}`);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/program/${accessCode}`);
       
       if (!response.ok) {
         throw new Error('Invalid access code');

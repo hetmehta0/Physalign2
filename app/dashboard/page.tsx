@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/dashboard/supabase';
+import { getSupabaseClient } from '@/lib/dashboard/supabase';
 
 export default function Home() {
   const router = useRouter();
@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     // Check if user is authenticated
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    getSupabaseClient().auth.getSession().then(({ data: { session } }: any) => {
       if (session) {
         // If logged in, go to patients
         router.push('/dashboard/patients');
