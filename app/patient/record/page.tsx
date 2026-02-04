@@ -41,7 +41,7 @@ export default function RecordExercise() {
     landmarks: {},
     fatigueLevel: 5,
     fatigueNotes: ''
-  });
+  } as ExerciseState);
   const [sessionMetrics, setSessionMetrics] = useState<any[]>([]);
   const [useRearCamera, setUseRearCamera] = useState(false);
   const [showZoomControls, setShowZoomControls] = useState(false);
