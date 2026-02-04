@@ -21,8 +21,8 @@ interface ExerciseState {
   tiredness: number;
   tempo: string;
   landmarks: { [key: string]: { x: number; y: number; z?: number } };
-  fatigueLevel?: number;
-  fatigueNotes?: string;
+  fatigueLevel: number;
+  fatigueNotes: string;
 }
 
 export default function RecordExercise() {
